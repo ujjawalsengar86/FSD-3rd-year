@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>online shop</h1>
+    <h2>Product Details</h2>
+    <h2>enter the quantity</h2>
+    <div id = "product">
+        <p>product name : <span id = "name">RICE</span></p>
+        <p>product price : <span id = "price">100</span></p>
+        <p>product quantity : <input type="number" id = "quantity"></p>
+        
+
+        <p>product name : <span id = "name">coffe</span></p>
+        <p>product price : <span id = "price">10</span></p>
+        <p>product quantity : <input type="number" id = "quantity"></p>
+    
+    </div>
+    <p id = "total"></p>
+    
+    <button onclick = 'buy(product)'>Buy Now</button>
+
+    <display sum =(quantity*price) ></display>
+    <script>
+        //const student ={
+        //    name: "aditya" , 
+          //  class: "lkg" , 
+           // fee:10 ,
+          //  address: "meerut",
+             
+      //  }
+       // document.write(student.name + "<br>");
+        //document.write(student.class + "<br>");
+        //document.write(student.fee + "<br>");
+        //document.write(student.address + "<br>");
+      // for(let x in student){
+        //    document.write(student[x] + "<br>");
+      // }
+      //let a = prompt("enter the no==")
+      const product = {
+        name: "RICE" , 
+        price: 100 , 
+        quantity: 0 ,
+        total: 0 
+
+        
+      }    </script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+/* Reset */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+
+  
+    background-image:url("https://tse4.mm.bing.net/th/id/OIP.YRLnFB2_z8EqsilbfSMoQAHaD9?r=0&rs=1&pid=ImgDetMain&o=7&rm=3");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background 
+}
+
+
+
+
+header h1{
+    text-align:center;
+    color:white;
+    margin:20px 0;
+    
+}
+
+
+.navbar{
+    width:100%;
+    background:rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 20px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo-container{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    border:2px solid #ffd700;
+    object-fit:cover;
+    transition:transform 0.3s ease;
+}
+
+.logo:hover{
+    transform:scale(1.1) rotate(10deg);
+}
+
+.college-name{
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+
+.navbar ul{
+    list-style:none;
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.navbar ul li{
+    position:relative;
+}
+
+.navbar ul li a{
+    text-decoration:none;
+    color:white;
+    font-size:17px;
+    font-weight:600;
+    padding:8px 0;
+    position:relative;
+    transition:color 0.3s ease;
+}
+
+.navbar ul li a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:0;
+    height:3px;
+    background:#ffd700;
+    border-radius:2px;
+    transition:width 0.3s ease;
+}
+
+.navbar ul li a:hover{
+    color:#ffd700;
+}
+
+.navbar ul li a:hover::after,
+.navbar ul li a.active::after{
+    width:100%;
+}
+
+.navbar ul li a.active{
+    color:#ffd700;
+}
+
+/* Hamburger menu */
+.hamburger{
+    display:none;
+    flex-direction:column;
+    cursor:pointer;
+    gap:5px;
+}
+
+.hamburger span{
+    width:28px;
+    height:3px;
+    background:white;
+    border-radius:2px;
+    transition:0.3s;
+}
+
+/* Responsive */
+@media (max-width: 900px){
+    .navbar{
+        flex-wrap:wrap;
+        padding:10px 20px;
+    }
+
+    .hamburger{
+        display:flex;
+    }
+
+    .nav-links{
+        display:none;
+        flex-direction:column;
+        width:100%;
+        background:rgba(0,0,0,0.95);
+        padding:20px 0;
+        gap:0;
+        border-radius:0 0 10px 10px;
+        margin-top:10px;
+    }
+
+    .nav-links li{
+        text-align:center;
+        padding:12px 0;
+        border-bottom:1px solid rgba(255,255,255,0.1);
+    }
+
+    .nav-links li:last-child{
+        border-bottom:none;
+    }
+
+    .nav-links.show{
+        display:flex;
+    }
+
+    .college-name{
+        font-size:16px;
+    }
+}
+
+
+.hero{
+    height:75vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.hero-content{
+   
+    padding:40px;
+    border-radius:15px;
+    color:white;
+    width:60%;
+}
+
+.hero-content h2{
+    font-size:45px;
+    margin-bottom:0px;
+}
+
+.hero-content p{
+    font-size:20px;
+    line-height:1.6;
+    margin-bottom:30px;
+}
+
+
+
