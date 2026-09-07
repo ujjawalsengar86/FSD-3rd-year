@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Booking System</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        
+        <div class="header">
+            <img
+                src="https://img.freepik.com/premium-vector/travel-bus-illustration-logo-light-background_668007-487.jpg?w=200"
+                alt="Bus Logo"
+                class="logo"
+            >
+            <h1>Bus Booking System</h1>
+        </div>
+
+        
+        <h3>User Information</h3>
+
+        <form>
+
+            <label for="username">User Name:</label>
+            <input type="text" id="username" name="username"
+                   placeholder="Enter your name" required>
+            <br><br>
+
+            <label for="age">User Age:</label>
+            <input type="number" id="age" name="age"
+                   placeholder="Enter your age" min="1" max="100" required>
+            <br><br>
+
+            <label for="aadhaar">Aadhaar Number:</label>
+            <input type="text" id="aadhaar" name="aadhaar"
+                   placeholder="Enter Aadhaar number"
+                   maxlength="12">
+            <br><br>
+
+            <label for="city">Select City:</label>
+            <select id="city" name="city">
+                <option value="">-- Select City --</option>
+                <option value="delhi">Delhi</option>
+                <option value="mumbai">Mumbai</option>
+                <option value="chennai">Chennai</option>
+            </select>
+            <br><br>
+
+            <label for="date">Select Date:</label>
+            <input type="date" id="date" name="date" required>
+            <br><br>
+
+           
+            <h3>Bus Information</h3>
+
+            <p>Select Bus Type:</p>
+
+            <input type="radio" id="ac" name="busType" value="AC">
+            <label for="ac">AC Bus - ₹2000</label>
+
+            <br>
+
+            <input type="radio" id="nonac" name="busType" value="Non-AC">
+            <label for="nonac">Non-AC Bus - ₹1000</label>
+
+            <br><br>
+
+            <label for="seat">Select Your Seat:</label>
+            <input type="number" id="seat" name="seat"
+                   min="1" max="50"
+                   placeholder="Seat No.">
+            <br><br>
+
+            
+            <input type="submit" value="Book Bus">
+
+        </form>
+
+    </div>
+<script src="bus.js"></script>
+</body>
+</html>
