@@ -1,69 +1,124 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MY SHOP</title>
+    <title>Weather App</title>
+
     <style>
         table {
-            width: 100%;
-            margin:auto;
-            font-size: 16px;
-            color: rgb(0, 0, 0);
+            width: 80%;
+            margin: 50px auto;
+            padding: 10px;
+            font-size: 25px;
+            color: black;
+            border: 2px solid black;
             border-collapse: collapse;
         }
+
         th, td {
-            border: 1px solid #af1e1e;
-            padding: 8px;
+            border: 2px solid black;
+            padding: 15px;
+            text-align: center;
         }
-        th {
-            background-color: #c59f9f;
-            text-align: left;
-        }</style>
+
+        table thead {
+            background-color: rgb(154, 91, 91);
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
 </head>
+
 <body>
+
     <table>
         <thead>
             <tr>
-                <th>so.no</th>
-                <th>Title</th>
+                <th>Sr. No</th>
+                <th>Temperature</th>
+                <th>Weather</th>
                 <th>Image</th>
-                <th>Price</th>
-                <th>Category</th>
             </tr>
         </thead>
-        <tbody id="data">
 
+        <tbody id="data">
         </tbody>
     </table>
+
     <script>
-        const ele=document.getElementById("data");
-        const url = "https://dummyjson.com/products";
-        async function loadProduct(){
-            try{ 
-                const response = await fetch(url);
-                const data = await response.json();
-                console.log("Data:", data, data.products);
-                let row = "";
-                data.products.map((i,index)=>{
-                    row += `
+
+        const ele = document.getElementById("data");
+
+        const API_KEY = "7352951a376818270c355ce65f7a8067";
+
+        const lat = -75.25;
+        const lon = -50.07;
+
+        const URL =
+            `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
+
+        async function loadWeather() {
+
+            try {
+
+                const res = await fetch(URL);
+
+                if (!res.ok) {
+                    throw new Error("Unable to fetch weather data");
+                }
+
+                const data = await res.json();
+
+                console.log("Weather Data:", data);
+
+                const temperature = data.main.temp;
+                const weather = data.weather[0].main;
+                const icon = data.weather[0].icon;
+
+                ele.innerHTML = `
                     <tr>
-                        <td>${index + 1}</td>
-                        <td>${i.title}</td>
-                        <td><img src=${i.images[0]} alt = ${i.title} width="100"/></td>
-                        <td>${i.price}</td>
-                        <td>${i.category}</td>
+                        <td>1</td>
+
+                        <td>
+                            ${temperature} °C
+                        </td>
+
+                        <td>
+                            ${weather}
+                        </td>
+
+                        <td>
+                            <img 
+                                src="https://openweathermap.org/img/wn/${icon}@2x.png"
+                                alt="${weather}"
+                            >
+                        </td>
                     </tr>
-                    `;
-                })
-                ele.innerHTML = row;
-            }
-            catch(error){
-                console.log("Error:", error);
-                ele.innerHTML = `<tr><td colspan="5">Network Error</td></tr>`;
+                `;
+
+            } catch (err) {
+
+                console.log("ERROR:", err);
+
+                ele.innerHTML = `
+                    <tr>
+                        <td colspan="4">
+                            Network Error
+                        </td>
+                    </tr>
+                `;
             }
         }
-        loadProduct();
+
+        loadWeather();
+
     </script>
+
 </body>
 </html>
+```
