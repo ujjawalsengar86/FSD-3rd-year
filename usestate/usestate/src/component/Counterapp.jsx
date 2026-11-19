@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 
+
 const Counterapp = () => {
     const[count , setcount]=useState(0);
     function inc(){

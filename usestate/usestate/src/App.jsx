@@ -122,11 +122,13 @@
 // export default App
 import React from 'react'
 import Counterapp from './component/Counterapp'
+import ImageMover from './component/image-mover'
 
 const App = () => {
   return (
     <div>
-      <Counterapp/>
+      
+      <ImageMover/>
     </div>
   )
 }
